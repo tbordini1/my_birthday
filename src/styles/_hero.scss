@@ -1,0 +1,59 @@
+@use 'variables';
+
+.hero {
+    padding-top: 64px;
+    padding-bottom: 100px;
+    background-image: url(../images/cupcakes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh; // Ocupa a altura total da viewport
+
+    .container {
+        position: relative;
+        height: 100%; // Garante que o conteúdo ocupe toda a altura
+        display: flex;
+        flex-direction: column;
+        justify-content: center; // Centraliza verticalmente
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: variables.$secondaryTextColor;
+        content: '';
+        opacity: .5;
+    }
+
+    &__text {
+        margin-top: 0px;
+        margin-bottom: 150px;
+        font-size: 40px;
+        line-height: 56px;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .contador {
+        margin-bottom: 80px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        color: variables.$textColor; // Usa a cor de texto padrão
+    }
+
+    @media (max-width: 640px) {
+        padding: 40px 0;
+
+        &__text {
+            font-size: 25px;
+            line-height: 24px;
+            margin: 24px 0;
+        }
+
+    
+    }
+}

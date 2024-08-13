@@ -1,3 +1,32 @@
-body {
-    background-color: bisque;
+@use 'hero';
+@use 'components/infos_bar';
+@use 'components/buttons';
+@use 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    color: variables.$textColor;
+    list-style: none;
+}
+
+html, body {
+    height: 100%;  // Garante que a altura da página seja 100%
+}
+
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: 640px) {
+        max-width: 80%;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 90%;
+    }
 }
